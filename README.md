@@ -24,9 +24,7 @@
 &emsp;&emsp;For the allocation policies, we should apply for enough heap space to store the required size space by `malloc method`. And free the specific address with `free method`.<br>
 &emsp;&emsp;The malloc need to find a enough sapce region in the free space in the total heap space, and for the addresses are ordered in the free region list, so I think the doubled linked list a good way to store the free regions. If we need to find a required free region, we can traverse the linked list to find it. If we need store a new free region into the list, we can add it or merge it easily by the properties of linked lists.<br>
 
-## Results from My Performance Experiments
-
-&emsp;&emsp;For the first fit methods:<br>
+The first fit methods:<br>
 
 **ff_malloc**<br>
 &emsp;&emsp;.<br>
@@ -34,7 +32,7 @@
 **ff_free**<br>
 &emsp;&emsp;.<br>
 
-&emsp;&emsp;For the best fit methods:<br>
+The best fit methods:<br>
 
 **bf_malloc**<br>
 &emsp;&emsp;.<br>
@@ -42,13 +40,18 @@
 **bf_free**<br>
 &emsp;&emsp;.<br>
 
-&emsp;&emsp;For the two performance study report methods:<br>
+Two performance study report methods:<br>
 
 **get_data_segment_size**<br>
 &emsp;&emsp;.<br>
 <br>
 
 **get_data_segment_free_space_size**<br>
+&emsp;&emsp;.<br>
+<br>
+
+## Results from My Performance Experiments
+
 &emsp;&emsp;.<br>
 <br>
 
