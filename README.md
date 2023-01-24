@@ -57,22 +57,22 @@ Two performance study report methods:<br>
 
 ## Analysis of The Results
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 
-**tital**<br>
+**title**<br>
 &emsp;&emsp;.<br>
 <br>
 
