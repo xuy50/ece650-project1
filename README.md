@@ -61,13 +61,13 @@ Two performance study report methods:<br>
 ## Analysis of The Results
 
 **equal_size_allocs**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;The `equal_size_allocs` tests' running time are almost the same, and the fragmentation are the same. I found that all data malloced into the heap are the same size which is `ALLOC_SIZE = 128`, and the data would be freed in order, so I think both the bf and ff way will use the same free region in the free list which is the first fit region in the free list. Therefore, both of `equal_size_allocs`'s running time and fragmentation should be the same, but because of normally time erorr the time will be very close but not the same.<br>
 
 **small_range_rand_allocs**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;The `small_range_rand_allocs`'s results have a very large difference. For the fragmentation, the best fit way will choose the best matched free region, and the first fit will choose the first free region, which may not be the best matched one, so the first fit way's fragmentation will larger than the best fit way's. And the runing time also has a grate difference. For this case, there are many small range regions in the free list. The first fit way will use the first free region, which may not be the best matched one, so it can do split operations, then there may not be enough space left for after requests, and the `sbrk()` function will be called, which is a system call founction, so it will spend a lot of time. For example, the free list has five free regions, whose size in order are `[1,2,3,4,5]`, then try to malloc 5 regions to use whose size in order are `[5,4,3,2,1]`, then the first fit way will call two more times `sbkr()` than best fit way. What's more, the best fit way may reduce the length of the free list after each best match operation, which can reduce the times of traversing the free list, which can reduce the running time.<br>
 
 **large_range_rand_allocs**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;<br>
 <br>
 
 
