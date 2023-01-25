@@ -60,22 +60,13 @@ Two performance study report methods:<br>
 
 ## Analysis of The Results
 
-**title**<br>
+**equal_size_allocs**<br>
 &emsp;&emsp;.<br>
 
-**title**<br>
+**small_range_rand_allocs**<br>
 &emsp;&emsp;.<br>
 
-**title**<br>
-&emsp;&emsp;.<br>
-
-**title**<br>
-&emsp;&emsp;.<br>
-
-**title**<br>
-&emsp;&emsp;.<br>
-
-**title**<br>
+**large_range_rand_allocs**<br>
 &emsp;&emsp;.<br>
 <br>
 
