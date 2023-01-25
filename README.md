@@ -51,7 +51,11 @@ Two performance study report methods:<br>
 
 ## Results from My Performance Experiments
 
-&emsp;&emsp;.<br>
+| FF | Runing Time | Fragmentation | BF | Runing Time | Fragmentation |
+|  ----  | ----  |  ----  | ----  |  ----  | ----  |
+| ff_equal_size_allocs | 22.52s | 0.45 | bf_equal_size_allocs | 22.34s | 0.45 |
+| ff_small_range_rand_allocs | 7.27s | 0.060 | bf_small_range_rand_allocs | 1.84s | 0.022 |
+| ff_large_range_rand_allocs | 55.07s | 0.093 | bf_large_range_rand_allocs | 67.67s | 0.042 |
 <br>
 
 ## Analysis of The Results
