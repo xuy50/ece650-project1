@@ -22,32 +22,31 @@
 <br>
 
 &emsp;&emsp;For the allocation policies, we should apply for enough heap space to store the required size space by `malloc method`. And free the specific address with `free method`.<br>
-&emsp;&emsp;The malloc need to find a enough sapce region in the free space in the total heap space, and for the addresses are ordered in the free region list, so I think the doubled linked list a good way to store the free regions. If we need to find a required free region, we can traverse the linked list to find it. If we need store a new free region into the list, we can add it or merge it easily by the properties of linked lists.<br>
+&emsp;&emsp;The malloc need to find a enough sapce region in the free space in the total heap space, and for the addresses are ordered in the free region list, so I think the doubled linked list a good way to store the free regions. If we need to find a required free region, we can traverse the linked list to find it. If we need store a new free region into the list, we can add or merge or split it easily by the properties of linked lists.<br>
 
 The first fit methods:<br>
 
 **ff_malloc**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;Firstly, check the free list, when find the first free region which is enough for the require size with the metadata size, split or use the free region. If the region's left part is lager than metadata size, split the size need to use for require size; otherwise, use the total region space. Then, if no free region is enough, use the sbrk system call to increase the heap size for require size, if no enough memory space can be increase for heap, return NULL.<br>
 
 **ff_free**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;Check the address need to be freed whether it is NULL, if it is NULL, return back. Find the correct position for the address which need to be freed. The first address which is large the require address will be the required freed address next. And check whether the required freed address is contious with its prev or next, merge them together.<br>
 
 The best fit methods:<br>
 
 **bf_malloc**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;Firstly, check all of the free list, check the closest enough size free region, split or use the free region. If the region's left part is lager than metadata size, split the size need to use for require size; otherwise, use the total region space. Then, if no free region is enough, use the sbrk system call to increase the heap size for require size, if no enough memory space can be increase for heap, return NULL.<br>
 
 **bf_free**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;Because the `bf_free()` is totally the same as the `ff_free()`, so I call the `ff_free()` to implement the `bf_free()`<br>
 
 Two performance study report methods:<br>
 
 **get_data_segment_size**<br>
-&emsp;&emsp;.<br>
-<br>
+&emsp;&emsp;This function is for return the totally heap size. I set a global variable to update the heap size when it use the system call `sbrk()` function.<br>
 
 **get_data_segment_free_space_size**<br>
-&emsp;&emsp;.<br>
+&emsp;&emsp;This function is for return the totally free region size in the heap. I set a global varialbe to update the free size when do free operation or do malloc operations for the free region.<br>
 <br>
 
 ## Results from My Performance Experiments
