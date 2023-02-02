@@ -4,7 +4,7 @@
  - netID: yx248
  - Data: 01/24/2023
  - Instructor: Rabih Younes
- - Course: ECE651
+ - Course: ECE650
 
 ## The Allocation Policies Implementation:
 
